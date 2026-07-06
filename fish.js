@@ -17,12 +17,12 @@ const fish = [
 
 const addfishbtn = document.getElementById("addfishbtn")
 
-function spawn_fish(list_of_fish) {
+function spawn_fish() {
     const aquarium = document.querySelector(".aquarium")
-    let index = Math.floor(Math.random() * list_of_fish.length);
+    let index = Math.floor(Math.random() * fish.length);
 
     const fish = document.createElement("img");
-    fish.src = `${list_of_fish[index]}`;
+    fish.src = `${fish[index]}`;
     fish.className = "fish";
 
     let fishX = Math.floor((Math.random() * 550))
