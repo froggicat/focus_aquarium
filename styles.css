@@ -1,0 +1,80 @@
+body {
+    background-color: #fff9e3;
+    display: flex;
+}
+
+.aquarium {
+    background-color: #a9eef5;
+    border-style: solid;
+    border-radius: 25px;
+    border-color:#252b4a;
+    border-width: 5px;
+    height: 400px;
+    width: 600px;
+    margin-top: 25px;
+    margin-left: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fish {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    z-index: 3;
+}
+
+.seaweed1{
+    position: absolute;
+    bottom: 70px;
+}
+
+.seaweed2{
+    position: absolute;
+    right: 20px;
+    bottom: 70px;
+}
+
+.sand {
+    margin: 0;
+    width: 86px;
+    z-index: 2;
+}
+
+.sand-row {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 200px;
+    margin: 25px; 
+}
+
+.timer {
+    border-radius: 10px;
+    background-color: #f7d9b2;
+    height: 30%;
+    width: 100%;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color:#252b4a;
+    border-width: 5px;
+}
+
+.task-tracker {
+    border-radius: 10px;
+    background-color: #f7d9b2;
+    height: 70%;
+    width: 100%;
+    margin-top: 10px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color:#252b4a;
+    border-width: 5px;
+}
