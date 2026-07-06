@@ -1,5 +1,9 @@
+import spawn_fish from "./fish.js";
+
+let session = prompt("How long do you want your focus session in minutes?")
+
 // storing time in seconds rather than minutes
-let totalTime = 25 * 60;
+let totalTime = session * 60;
 let timer = null;
 
 function updateDisplay() {
@@ -18,6 +22,7 @@ function startTimer() {
             clearInterval(timer)
             timer = null;
             alert("Pomodoro complete - random fish time!")
+            spawn_fish();
         }
     }, 1000)
 }
@@ -30,23 +35,12 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(timer);
     timer = null;
-    totalTime = 25 * 60;
+    totalTime = session * 60;
     updateDisplay();
   }
 
-let startbtn = document.getElementById("start")
-let pausebtn = document.getElementById("pause")
-let resetbtn = document.getElementById("reset")  
+document.getElementById("start").addEventListener("click", startTimer);
+document.getElementById("pause").addEventListener("click", pauseTimer);
+document.getElementById("reset").addEventListener("click", resetTimer);
 
-startbtn.addEventListener("click", () => {
-    startTimer()
-})
-
-pausebtn.addEventListener("click", () => {
-    pauseTimer()
-})
-
-resetbtn.addEventListener("click", () => {
-    resetTimer()
-})
 updateDisplay();

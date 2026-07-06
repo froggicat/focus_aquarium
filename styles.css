@@ -3,6 +3,18 @@ body {
     display: flex;
 }
 
+#display {
+    margin: 0;
+}
+
+button {
+    font-family: 'Baloo 2', sans-serif;
+    border-radius: 5px;
+    background-color: #fff9e3;
+    color: #252b4a;
+    border-color: #252b4a;
+}
+
 .aquarium {
     background-color: #a9eef5;
     border-style: solid;
@@ -56,6 +68,7 @@ body {
 }
 
 .timer {
+    font-family: 'Baloo 2', sans-serif;
     border-radius: 10px;
     background-color: #f7d9b2;
     height: 30%;
@@ -65,6 +78,12 @@ body {
     border-radius: 25px;
     border-color:#252b4a;
     border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #252b4a;
+    font-weight: medium;
 }
 
 .task-tracker {

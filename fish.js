@@ -1,4 +1,4 @@
-const fish = [
+const fishImages = [
     "images/fish1.svg",
     "images/fish2.svg",
     "images/fish3.svg",
@@ -17,12 +17,18 @@ const fish = [
 
 const addfishbtn = document.getElementById("addfishbtn")
 
-function spawn_fish() {
+export default function spawn_fish() {
+    console.log("spawnFish running");
+
     const aquarium = document.querySelector(".aquarium")
-    let index = Math.floor(Math.random() * fish.length);
+    let index = Math.floor(Math.random() * fishImages.length);
 
     const fish = document.createElement("img");
-    fish.src = `${fish[index]}`;
+
+    console.log(index);
+    console.log(fishImages[index]);
+
+    fish.src = `${fishImages[index]}`;
     fish.className = "fish";
 
     let fishX = Math.floor((Math.random() * 550))
@@ -35,7 +41,3 @@ function spawn_fish() {
 
     console.log("fish added!")
 }
-
-addfishbtn.addEventListener("click", () => {
-    spawn_fish(fish);
-});
