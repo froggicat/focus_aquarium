@@ -1,6 +1,7 @@
 body {
     background-color: #fff9e3;
     display: flex;
+    font-family: 'Baloo 2', sans-serif;
 }
 
 #display {
@@ -8,7 +9,6 @@ body {
 }
 
 button {
-    font-family: 'Baloo 2', sans-serif;
     border-radius: 5px;
     background-color: #fff9e3;
     color: #252b4a;
@@ -27,6 +27,11 @@ button {
     margin-left: 20px;
     position: relative;
     overflow: hidden;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .fish {
@@ -96,4 +101,15 @@ button {
     border-radius: 25px;
     border-color:#252b4a;
     border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    margin: 0;
+}
+
+button {
+    margin-left: 2px;
 }
