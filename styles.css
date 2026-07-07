@@ -101,15 +101,45 @@ h3 {
     border-radius: 25px;
     border-color:#252b4a;
     border-width: 5px;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    text-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #252b4a transparent;
+    scrollbar-gutter: 5px;
 }
 
 ul {
     margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
     margin-left: 2px;
+}
+
+li {
+    width: 175px;
+    background: #fff9e3;
+    margin: 5px;
+    margin-right: 37px;
+    text-align: center;
+    border-radius: 5px;
+    border-color:#252b4a;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.task-buttons {
+    margin-left: 5px;
 }

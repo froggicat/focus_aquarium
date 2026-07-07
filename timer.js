@@ -19,9 +19,11 @@ function startTimer() {
         totalTime--;
         updateDisplay();
         if (totalTime <= 0) {
+            totalTime = 0
+            updateDisplay()
+
             clearInterval(timer)
             timer = null;
-            alert("Pomodoro complete - random fish time!")
             spawn_fish();
         }
     }, 1000)

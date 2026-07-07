@@ -17,6 +17,29 @@ const fishImages = [
 
 const addfishbtn = document.getElementById("addfishbtn")
 
+function swim_fish(fish, x, aquarium) {
+    let direction = 1 
+    let speed = 1 + Math.random() * 2
+
+    setInterval(() => {
+        x += speed * direction
+
+        // if it hits the right wall
+        if (x >= aquarium.clientWidth - fish.offsetWidth) {
+            direction = -1;
+            fish.style.transform = "scaleX(-1)"
+        }
+
+        // if it hits the left wall
+        if (x <= 0) {
+            direction = 1;
+            fish.style.transform = "scaleX(1)"
+        }
+
+        fish.style.left = x + "px"
+    }, 20)
+}
+
 export default function spawn_fish() {
     console.log("spawnFish running");
 
@@ -31,8 +54,12 @@ export default function spawn_fish() {
     fish.src = `${fishImages[index]}`;
     fish.className = "fish";
 
+    const sandHeight = 100 
+
     let fishX = Math.floor((Math.random() * 550))
-    let fishY = Math.floor((Math.random() * 400))
+    let fishY = Math.floor(
+        Math.random() * (400 - sandHeight)
+    )
 
     fish.style.left = fishX + "px";
     fish.style.top = fishY + "px";
@@ -40,4 +67,6 @@ export default function spawn_fish() {
     aquarium.appendChild(fish);
 
     console.log("fish added!")
+
+    swim_fish(fish, fishX, aquarium)
 }
