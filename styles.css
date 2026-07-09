@@ -2,10 +2,28 @@ body {
     background-color: #fff9e3;
     display: flex;
     font-family: 'Baloo 2', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 #display {
     margin: 0;
+}
+
+#upperSection {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+}
+
+#lowerSection {
+    align-self: flex-end;
+    margin-right: 69px;
+    margin-top: 0;
+}
+
+#fishCounter {
+    margin-top: 0;
 }
 
 button {
@@ -97,6 +115,7 @@ h3 {
     height: 70%;
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 0;
     border-style: solid;
     border-radius: 25px;
     border-color:#252b4a;

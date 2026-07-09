@@ -15,7 +15,8 @@ const fishImages = [
     "images/fish14.svg",
 ]
 
-const addfishbtn = document.getElementById("addfishbtn")
+const fishCounter = document.getElementById("fishCounter");
+let totalFish = 0;
 
 function swim_fish(fish, x, aquarium) {
     let direction = 1 
@@ -66,7 +67,8 @@ export default function spawn_fish() {
 
     aquarium.appendChild(fish);
 
-    console.log("fish added!")
+    totalFish += 1
+    fishCounter.textContent = `Total Fish: ${totalFish}`
 
     swim_fish(fish, fishX, aquarium)
 }

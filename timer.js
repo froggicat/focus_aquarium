@@ -1,14 +1,15 @@
 import spawn_fish from "./fish.js";
 
-let session = prompt("How long do you want your focus session in minutes?")
+let focus = prompt("How long do you want your focus session in minutes?")
+let breaktime = prompt("How long do you want your break to be?")
 
-// storing time in seconds rather than minutes
-let totalTime = session * 60;
+let onBreak = false;
+let totalSessionTime = focus * 60;
 let timer = null;
 
 function updateDisplay() {
-    let minutes = Math.floor(totalTime / 60);
-    let seconds = Math.floor(totalTime % 60);
+    let minutes = Math.floor(totalSessionTime / 60);
+    let seconds = Math.floor(totalSessionTime % 60);
 
     document.getElementById("display").textContent = `${minutes} : ${seconds.toString().padStart(2, "0")}`
 }
@@ -16,15 +17,26 @@ function updateDisplay() {
 function startTimer() {
     if (timer) return;
     timer = setInterval(() => {
-        totalTime--;
+        totalSessionTime--;
         updateDisplay();
-        if (totalTime <= 0) {
-            totalTime = 0
+        if (totalSessionTime <= 0 && onBreak == false) {
+            onBreak = true
+            alert("Focus over - break time!")
+            totalSessionTime = breaktime * 60 
             updateDisplay()
 
             clearInterval(timer)
             timer = null;
             spawn_fish();
+        } else if (totalSessionTime <= 0 && onBreak == true) {
+            onBreak = false
+            alert("Break over - focus time!")
+            totalSessionTime = focus * 60
+            updateDisplay()
+
+            clearInterval(timer)
+            timer = null;
+            // maybe add a different sprite that appears after a break!
         }
     }, 1000)
 }
@@ -37,7 +49,7 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(timer);
     timer = null;
-    totalTime = session * 60;
+    totalSessionTime = focus * 60;
     updateDisplay();
   }
 
