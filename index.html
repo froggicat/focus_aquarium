@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="music" loop>
+        <source type="audio/mp3">
+    </audio>
+    <audio id="bubble" src="music/bubble.mp3">
+        <source type="audio/mp3">
+    </audio>
     <div id="upperSection">
         <div class="aquarium">
             <img class="seaweed1" src="images/seaweed1.svg" alt="seaweed1">
@@ -39,6 +45,17 @@
         </div>
     </div>
     <div id="lowerSection">
+        <div id="musicbtns">
+            <button id="playbtn">
+                <img class="musicbtns" src="images/playbtn.svg" alt="play button">
+            </button>
+            <button id="pausebtn">
+                <img class="musicbtns" src="images/pausebtn.svg" alt="pause button">
+            </button>
+            <button id="skipbtn">
+                <img class="musicbtns" src="images/skip.svg" alt="skip to next song button">
+            </button>
+        </div>
         <h1 id="fishCounter">Total Fish: 0</h1>
     </div>
     <script type="module" src="timer.js"></script>

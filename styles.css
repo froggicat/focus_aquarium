@@ -17,6 +17,7 @@ body {
 }
 
 #lowerSection {
+    display: flex;
     align-self: flex-end;
     margin-right: 69px;
     margin-top: 0;
@@ -123,7 +124,6 @@ h3 {
     display: inline-block;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
     text-align: center;
     overflow: scroll;
     overflow-x: hidden;
@@ -139,10 +139,18 @@ ul {
     text-align: center;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 button {
     margin-left: 2px;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    text-align: left;
 }
 
 li {
@@ -161,4 +169,24 @@ li {
 
 .task-buttons {
     margin-left: 5px;
+}
+
+#musicbtns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.musicbtns {
+    width: 25px;
+    height: 25px;
+}
+
+#playbtn, #pausebtn, #skipbtn {
+    height: 45px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+#skipbtn {
+    margin-right: 500px;
 }

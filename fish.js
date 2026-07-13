@@ -1,3 +1,5 @@
+const bubble = document.getElementById("bubble")
+
 const fishImages = [
     "images/fish1.svg",
     "images/fish2.svg",
@@ -69,6 +71,8 @@ export default function spawn_fish() {
 
     totalFish += 1
     fishCounter.textContent = `Total Fish: ${totalFish}`
+
+    bubble.play()
 
     swim_fish(fish, fishX, aquarium)
 }
