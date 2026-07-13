@@ -1,7 +1,13 @@
 import spawn_fish from "./fish.js";
 
-let focus = prompt("How long do you want your focus session in minutes?")
-let breaktime = prompt("How long do you want your break to be?")
+let focus = Number(prompt("How long do you want your focus session in minutes?"))
+let breaktime = Number(prompt("How long do you want your break to be?"))
+
+if (isNaN(focus) || isNaN(breaktime)) {
+    alert("please enter numbers only!")
+    throw new Error("invalid timer input")
+    
+}
 
 let onBreak = false;
 let totalSessionTime = focus * 60;
@@ -18,6 +24,9 @@ function startTimer() {
     if (timer) return;
     timer = setInterval(() => {
         totalSessionTime--;
+        if (totalSessionTime < 0) {
+            totalSessionTime = 0;
+        }
         updateDisplay();
         if (totalSessionTime <= 0 && onBreak == false) {
             onBreak = true
